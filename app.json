@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "aamarpay_native",
+    "slug": "aamarpay_native"
+  }
+}
