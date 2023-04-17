@@ -6,6 +6,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import Form from "../components/Form/Form";
 
 const Home = () => {
+    
     return (
         <SafeAreaView
             style={{ flex: 1, backgroundColor: COLORS.lightWhite }}
