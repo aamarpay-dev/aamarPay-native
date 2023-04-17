@@ -5,6 +5,9 @@
       "bundler": "metro"
     },
     "name": "aamarpay_native",
-    "slug": "aamarpay_native"
+    "slug": "aamarpay_native",
+    "hermes":"0.9.0",
+    "engine":"jsc-intl"
+    
   }
 }

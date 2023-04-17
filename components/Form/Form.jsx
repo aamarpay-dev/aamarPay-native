@@ -13,8 +13,9 @@ const Form = () => {
 
     const handlePayment = async () => {
         const data = {
+            
             store_id: "aamarpaytest",
-            tran_id: "exampleId",
+            tran_id: Math.floor(Math.random()*10000),
             success_url: "example.com",
             fail_url: "example.com",
             cancel_url: "example.com",
@@ -40,6 +41,7 @@ const Form = () => {
                 }
             });
             const data = await response.data;
+            console.log(data)
             navigation.navigate('webview/payment', { url: data.payment_url });
         } catch (error) {
             console.log(error);
