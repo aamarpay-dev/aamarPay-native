@@ -1,4 +1,4 @@
-import { ActivityIndicator, Text, TextInput, View } from "react-native";
+import { Text, TextInput, View } from "react-native";
 import styles from './form.style';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useState } from "react";
@@ -16,9 +16,9 @@ const Form = () => {
             
             store_id: "aamarpaytest",
             tran_id: Math.floor(Math.random()*10000),
-            success_url: "example.com",
-            fail_url: "example.com",
-            cancel_url: "example.com",
+            success_url: "success/example",
+            fail_url: "fail/example",
+            cancel_url: "cancel/example",
             currency: "BDT",
             signature_key: "dbb74894e82415a2f7ff0ec3a97e4183",
             desc: "Description",
@@ -41,7 +41,6 @@ const Form = () => {
                 }
             });
             const data = await response.data;
-            console.log(data)
             navigation.navigate('webview/payment', { url: data.payment_url });
         } catch (error) {
             console.log(error);

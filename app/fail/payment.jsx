@@ -1,5 +1,4 @@
-import { WebView } from 'react-native-webview';
-import { ActivityIndicator, SafeAreaView, StyleSheet, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { Stack, useRouter, useSearchParams } from 'expo-router';
 import { COLORS, icons, images } from '../../constants';
 import ScreenHeaderBtn from '../../components/header/ScreenHeaderBtn';
@@ -23,7 +22,7 @@ export default function App() {
                         <ScreenHeaderBtn
                             iconUrl={icons.chevronLeft}
                             dimension="60%"
-                            handlePress={()=>router.back()}
+                            handlePress={() => router.back()}
                         />
                     ),
                     headerRight: () => (
@@ -33,26 +32,9 @@ export default function App() {
                         />
                     )
                 }} />
-        <WebView
-            style={styles.container}
-            source={{ uri: params.url}}
-            // javaScriptEnabled={true}
-            // onError={(v)=>v}
-            ref={r=>console.log("ray",r.getSnapshotBeforeUpdate)}
-            onNavigationStateChange={e=>{
-                if(e.url.split('/').includes("success")){
-                    router.push('success/payment');
-                }else if(e.url.split('/').includes("fail")){
-                    router.push('fail/payment');
-                }
-            }}
-            startInLoadingState={true}
-            renderLoading={() => (
-                <View style={{flex:1}}>
-                    <ActivityIndicator size="large" color="lightskyblue"/>
-                </View>
-            )}
-        />
+            <View>
+                <Text>Pyment Failed</Text>
+            </View>
         </SafeAreaView>
     );
 }
@@ -60,6 +42,6 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop:200
+        paddingTop: 200
     },
 });
